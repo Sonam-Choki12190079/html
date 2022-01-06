@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<title>Fetching API using javaScripts</title>
+</head>
+<body>
+	<div id ="root"></div>
+
+	<script type="text/javascript">
+		fetch("https://herokudjangocrudapi.herokuapp.com/api/books").then((data)=>{
+			return data.json();
+		}).then((completedata)=>{
+			document.write(completedata[2].title);
+			document.write("<br>");
+			document.write(completedata[2].author);
+			document.write("<br>");
+			document.write(completedata[2].isbn);
+			document.write("<br>");
+			document.write(completedata[2].publisher);
+			
+			
+		});
+	</script>	
+</body>
+</html>
